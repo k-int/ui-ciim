@@ -22,7 +22,7 @@ class App extends React.Component {
     }
 
     return (
-      <p> Hello </p>
+      <p> This is where the CIIM app will go </p>
     );
   }
 }
