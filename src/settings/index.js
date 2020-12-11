@@ -50,7 +50,7 @@ class ResourceSharingSettings extends React.Component {
 
     const persistent = this.persistentPages.map(page => ({
       route: page.route,
-      label: intl.formatMessage({ id: `ui-rs.settingsSection.${page.id}` }),
+      label: intl.formatMessage({ id: `ui-ciim.settingsSection.${page.id}` }),
       component: page.component,
       perm: page.perm,
     }));

@@ -58,19 +58,19 @@ class SettingField extends React.Component {
       const settingLabel = setting.value ? refValues?.filter((obj) => obj.value === setting.value)[0]?.label : undefined;
       return (
         <p>
-          {settingLabel || (setting.defValue ? `[default] ${setting.defValue}` : <FormattedMessage id="ui-rs.settings.no-current-value" />)}
+          {settingLabel || (setting.defValue ? `[default] ${setting.defValue}` : <FormattedMessage id="ui-ciim.settings.no-current-value" />)}
         </p>
       );
     } else if (setting.settingType !== 'Password') {
       return (
         <p>
-          {setting.value ? setting.value : (setting.defValue ? `[default] ${setting.defValue}` : <FormattedMessage id="ui-rs.settings.no-current-value" />)}
+          {setting.value ? setting.value : (setting.defValue ? `[default] ${setting.defValue}` : <FormattedMessage id="ui-ciim.settings.no-current-value" />)}
         </p>
       );
     } else {
       return (
         <p>
-          {setting.value ? '********' : (setting.defValue ? '[default] ********' : <FormattedMessage id="ui-rs.settings.no-current-value" />)}
+          {setting.value ? '********' : (setting.defValue ? '[default] ********' : <FormattedMessage id="ui-ciim.settings.no-current-value" />)}
         </p>
       );
     }
@@ -133,7 +133,7 @@ class SettingField extends React.Component {
     let EditText;
 
     if (editing === true) {
-      EditText = <FormattedMessage id="ui-rs.settings.finish-editing" />;
+      EditText = <FormattedMessage id="ui-ciim.settings.finish-editing" />;
       return (
         <Button
           type="submit"
@@ -148,7 +148,7 @@ class SettingField extends React.Component {
         </Button>
       );
     } else {
-      EditText = <FormattedMessage id="ui-rs.settings.edit" />;
+      EditText = <FormattedMessage id="ui-ciim.settings.edit" />;
       return (
         <Button
           onClick={(e) => {
@@ -182,11 +182,11 @@ class SettingField extends React.Component {
     }
 
     const camelKey = snakeToCamel(setting.key);
-    const id = `ui-rs.settingName.${camelKey}.help`;
+    const id = `ui-ciim.settingName.${camelKey}.help`;
 
     return (
       <Card
-        headerStart={currentSetting ? <FormattedMessage id={`ui-rs.settingName.${camelKey}`} /> : <FormattedMessage id="ui-rs.settingName.settingLoading" />}
+        headerStart={currentSetting ? <FormattedMessage id={`ui-ciim.settingName.${camelKey}`} /> : <FormattedMessage id="ui-ciim.settingName.settingLoading" />}
         headerEnd={this.renderEditButton()}
         roundedBorder
       >
