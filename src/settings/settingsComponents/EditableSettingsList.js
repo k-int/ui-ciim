@@ -48,7 +48,7 @@ class EditableSettingsList extends React.Component {
           <Pane
             defaultWidth="fill"
             id={`settings-${settingSection}`}
-            paneTitle={<FormattedMessage id={`ui-rs.settingsSection.${settingSection}`} />}
+            paneTitle={<FormattedMessage id={`ui-ciim.settingsSection.${settingSection}`} />}
           >
             <form onSubmit={handleSubmit}>
               <FieldArray
