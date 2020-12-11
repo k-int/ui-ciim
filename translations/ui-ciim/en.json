@@ -1,10 +1,10 @@
 {
   "meta.title": "Ciim",
 
-  "ui-ciim.settings.edit": "Edit",
-  "ui-ciim.settings.finish-editing": "Save",
-  "ui-ciim.settings.no-current-value": "No current value",
+  "settings.edit": "Edit",
+  "settings.finish-editing": "Save",
+  "settings.no-current-value": "No current value",
 
-  "ui-ciim.settingName.settingLoading": "Loading"
+  "settingName.settingLoading": "Loading"
 
 }
