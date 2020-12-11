@@ -17,7 +17,7 @@ class SettingPage extends React.Component {
     },
     refdatavalues: {
       type: 'okapi',
-      path: 'rs/refdata',
+      path: 'ciim/refdata',
       params: {
         max: '500',
       },
