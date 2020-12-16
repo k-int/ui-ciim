@@ -11,16 +11,15 @@ import { FormattedMessage } from 'react-intl';
 import css from './CiimView.css';
 
 export default function CiimView() {
-
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState('');
   const [showFilter, setShowFilter] = useState(true);
 
   const toggleFilterPane = () => {
     setShowFilter(!showFilter);
-  }
+  };
 
   const SearchBar = () => (
-    <div className={css.searchContainer} >
+    <div className={css.searchContainer}>
       <SearchField
         className={css.searchFieldContainer}
         id="SearchField"
@@ -34,7 +33,7 @@ export default function CiimView() {
         buttonStyle="primary"
         className={css.searchButton}
         marginBottom0
-        onClick={() => setSearchTerm("")}
+        onClick={() => setSearchTerm('')}
       >
         Test
       </Button>
@@ -62,19 +61,18 @@ export default function CiimView() {
       }
     />
   );
-  console.log("SEARCH TERM: %o", searchTerm)
 
   return (
     <Paneset>
       {showFilter &&
         <Pane
           defaultWidth="20%"
-          paneTitle={<FormattedMessage id="ui-ciim.ciimView.paneHeader.filter" />}
           lastMenu={
             <PaneMenu>
               <CollapseFilterPaneButton onClick={toggleFilterPane} />
             </PaneMenu>
           }
+          paneTitle={<FormattedMessage id="ui-ciim.ciimView.paneHeader.filter" />}
         >
           <p> This is where the CIIM filters will go </p>
         </Pane>
