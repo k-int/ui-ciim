@@ -1,7 +1,10 @@
 import React, { lazy, Suspense } from 'react';
+import { Switch } from 'react-router-dom';
+import { Route } from '@folio/stripes/core';
 import PropTypes from 'prop-types';
 
 const Settings = lazy(() => import('./settings'));
+const CiimRoute = lazy(() => import('./routes/CiimRoute'));
 
 class App extends React.Component {
   static propTypes = {
@@ -22,7 +25,11 @@ class App extends React.Component {
     }
 
     return (
-      <p> This is where the CIIM app will go </p>
+      <Suspense fallback={null}>
+        <Switch>
+          <Route component={CiimRoute} path={`${path}`} />
+        </Switch>
+      </Suspense>
     );
   }
 }
