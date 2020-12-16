@@ -5,6 +5,9 @@
   "settings.finish-editing": "Save",
   "settings.no-current-value": "No current value",
 
-  "settingName.settingLoading": "Loading"
+  "settingName.settingLoading": "Loading",
 
+  "ciimView.paneHeader.filter": "Filter",
+  "ciimView.paneHeader.searchBar.search": "Search",
+  "ciimView.paneHeader.searchBar.actions": "Actions"
 }
