@@ -62,10 +62,10 @@ class SettingPage extends React.Component {
         data={{
           refdatavalues
         }}
-        settingSection={sectionName}
         initialValues={settings}
         onSave={this.handleSubmit}
         onSubmit={this.handleSubmit}
+        settingSection={sectionName}
       />
     );
   }

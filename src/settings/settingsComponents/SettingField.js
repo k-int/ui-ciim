@@ -20,6 +20,9 @@ class SettingField extends React.Component {
       currentSetting: PropTypes.object
     }),
     input: PropTypes.object,
+    intl: PropTypes.shape({
+      messages: PropTypes.array,
+    }),
     onSave: PropTypes.func
   };
 
@@ -89,9 +92,9 @@ class SettingField extends React.Component {
 
         return (
           <Field
-            name={`${this.props.input.name}`}
             component={Select}
             dataOptions={selectRefValues}
+            name={`${this.props.input.name}`}
           />
         );
 
@@ -99,19 +102,19 @@ class SettingField extends React.Component {
         return (
           <Field
             autoFocus
-            name={`${this.props.input.name}`}
-            type="password"
             component={TextField}
-            parse={v => v} // Lets us send an empty string instead of 'undefined'
+            name={`${this.props.input.name}`}
+            parse={v => v}
+            type="password" // Lets us send an empty string instead of 'undefined'
           />
         );
       case 'Template':
         return (
           <Field
             autoFocus
+            component={TextArea}
             fullWidth
             name={`${this.props.input.name}`}
-            component={TextArea}
             parse={v => v} // Lets us send an empty string instead of 'undefined'
           />
         );
@@ -120,8 +123,8 @@ class SettingField extends React.Component {
         return (
           <Field
             autoFocus
-            name={`${this.props.input.name}`}
             component={TextField}
+            name={`${this.props.input.name}`}
             parse={v => v} // Lets us send an empty string instead of 'undefined'
           />
         );
@@ -136,13 +139,13 @@ class SettingField extends React.Component {
       EditText = <FormattedMessage id="ui-ciim.settings.finish-editing" />;
       return (
         <Button
-          type="submit"
           onClick={(e) => {
             e.preventDefault();
             return (
               this.handleSave()
             );
           }}
+          type="submit"
         >
           {EditText}
         </Button>
@@ -170,7 +173,7 @@ class SettingField extends React.Component {
   }
 
   render() {
-    const { settingData } = this.props;
+    const { intl, settingData } = this.props;
     const currentSetting = settingData?.currentSetting;
     const setting = currentSetting || {};
 
@@ -186,12 +189,12 @@ class SettingField extends React.Component {
 
     return (
       <Card
-        headerStart={currentSetting ? <FormattedMessage id={`ui-ciim.settingName.${camelKey}`} /> : <FormattedMessage id="ui-ciim.settingName.settingLoading" />}
         headerEnd={this.renderEditButton()}
+        headerStart={currentSetting ? <FormattedMessage id={`ui-ciim.settingName.${camelKey}`} /> : <FormattedMessage id="ui-ciim.settingName.settingLoading" />}
         roundedBorder
       >
         {renderFunction}
-        {this.props.intl.messages[id] && <InfoPopover content={this.renderHelpText(id)} />}
+        {intl.messages[id] && <InfoPopover content={this.renderHelpText(id)} />}
       </Card>
     );
   }

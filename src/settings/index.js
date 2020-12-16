@@ -72,7 +72,6 @@ class ResourceSharingSettings extends React.Component {
 
   render() {
     const pageList = this.pageList();
-    const { match } = this.props;
 
     // XXX DO NOT REMOVE THE NEXT LINE. For reasons we do not
     // understand, if once this code renders an empty set of pages, it

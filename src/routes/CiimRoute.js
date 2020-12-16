@@ -3,8 +3,8 @@ import { stripesConnect } from '@folio/stripes/core';
 
 import CiimView from '../components/CiimView';
 
-export default stripesConnect(function CiimRoute() {
+export default stripesConnect(() => {
   return (
-    <CiimView/>
+    <CiimView />
   );
 });

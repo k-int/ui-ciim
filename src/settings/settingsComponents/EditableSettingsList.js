@@ -31,9 +31,8 @@ class EditableSettingsList extends React.Component {
     } = this.props;
     return (
       <Form
-        onSubmit={this.handleSave}
-        initialValues={initialValues}
         enableReinitialize
+        initialValues={initialValues}
         keepDirtyOnReinitialize
         mutators={{
           setSettingValue: (args, state, tools) => {
@@ -41,8 +40,9 @@ class EditableSettingsList extends React.Component {
           },
           ...arrayMutators
         }}
-        subscription={{ value: true }}
         navigationCheck
+        onSubmit={this.handleSave}
+        subscription={{ value: true }}
       >
         {({ handleSubmit, mutators }) => (
           <Pane
@@ -53,13 +53,13 @@ class EditableSettingsList extends React.Component {
             <form onSubmit={handleSubmit}>
               <FieldArray
                 component={EditableSettingsListFieldArray}
-                name="settings"
-                onSave={this.handleSave}
-                mutators={mutators}
                 data={{
                   refdatavalues: data?.refdatavalues
                 }}
                 initialValues={initialValues}
+                mutators={mutators}
+                name="settings"
+                onSave={this.handleSave}
               />
             </form>
           </Pane>
