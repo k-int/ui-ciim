@@ -1,0 +1,36 @@
+.filterPaneButton {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.searchFieldContainer {
+  flex-grow: 1;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.searchButton{
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.searchContainer {
+  display: inline-flex;
+  justify-content: space-between;
+  flex-grow: 1;
+  align-items: center;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.paneHeaderContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-grow: 1;
+  align-items: center;
+  padding-left: 5px;
+  padding-right: 5px;
+}

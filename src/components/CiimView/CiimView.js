@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FilterPaneSearch, Pane, PaneHeader, PaneMenu, Paneset } from '@folio/stripes/components';
+import { Button, Pane, PaneHeader, PaneMenu, Paneset, SearchField } from '@folio/stripes/components';
 
 import {
   CollapseFilterPaneButton,
@@ -19,26 +19,50 @@ export default function CiimView() {
     setShowFilter(!showFilter);
   }
 
-  const SearchHeader = () => (
-    <PaneHeader
-      firstMenu={
-        !showFilter &&
-          <PaneMenu>
-            <ExpandFilterPaneButton
-              onClick={toggleFilterPane}
-            />
-          </PaneMenu>
-      }
-    >
-      <FilterPaneSearch
+  const SearchBar = () => (
+    <div className={css.searchContainer} >
+      <SearchField
+        className={css.searchFieldContainer}
         id="SearchField"
-        onChange={e => setSearchTerm(e.target)}
-        onClear={setSearchTerm("")}
+        marginBottom0
+        onChange={e => setSearchTerm(e.target.value)}
+        // For some reason this is necessary for clear to work correctly
+        onClear={() => null}
         value={searchTerm}
-        searchAriaLabel="Search"
       />
-    </PaneHeader>
+      <Button
+        buttonStyle="primary"
+        className={css.searchButton}
+        marginBottom0
+        onClick={() => setSearchTerm("")}
+      >
+        Test
+      </Button>
+    </div>
   );
+
+  const ToggleFilterPaneButton = () => (
+    !showFilter &&
+      <div className={css.filterPaneButton}>
+        <PaneMenu>
+          <ExpandFilterPaneButton
+            onClick={toggleFilterPane}
+          />
+        </PaneMenu>
+      </div>
+  );
+
+  const Header = () => (
+    <PaneHeader
+      header={
+        <div className={css.paneHeaderContainer}>
+          <ToggleFilterPaneButton />
+          <SearchBar />
+        </div>
+      }
+    />
+  );
+  console.log("SEARCH TERM: %o", searchTerm)
 
   return (
     <Paneset>
@@ -57,7 +81,7 @@ export default function CiimView() {
       }
       <Pane
         defaultWidth="fill"
-        renderHeader={SearchHeader}
+        renderHeader={Header}
       >
         <p> This is where the CIIM app will go </p>
       </Pane>
