@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { 
+import {
   PaneHeader,
 } from '@folio/stripes/components';
-import { ActionButton, Divider, SearchBar, ToggleFilterPaneButton } from './';
+import { ActionButton, Divider, SearchBar, ToggleFilterPaneButton } from '.';
 
 import css from './Header.css';
 
@@ -22,8 +22,8 @@ const Header = ({
         />
         <SearchBar
           onSearch={() => null}
-          setSearchTerm={setSearchTerm}
           searchterm={searchTerm}
+          setSearchTerm={setSearchTerm}
         />
         <div className={css.divider}>
           <Divider />

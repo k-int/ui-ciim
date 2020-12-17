@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { 
+import {
   Dropdown,
   DropdownMenu
 } from '@folio/stripes/components';
@@ -22,8 +22,8 @@ const ActionButton = () => {
           'marginBottom0': true,
         }}
         label={<FormattedMessage id="ui-ciim.ciimView.paneHeader.searchBar.actions" />}
-        open={dropdownOpen}
         onToggle={toggleDropdown}
+        open={dropdownOpen}
       >
         <DropdownMenu role="menu">
           <span>This is our dropdown</span>
@@ -31,6 +31,6 @@ const ActionButton = () => {
       </Dropdown>
     </div>
   );
-}
+};
 
 export default ActionButton;

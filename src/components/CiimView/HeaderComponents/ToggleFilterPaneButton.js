@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { 
+import {
   PaneMenu
 } from '@folio/stripes/components';
 
@@ -10,8 +10,8 @@ import {
 
 import css from './Header.css';
 
-const ToggleFilterPaneButton = ({showFilter, toggleFilterPane}) => {
-  return(
+const ToggleFilterPaneButton = ({ showFilter, toggleFilterPane }) => {
+  return (
     !showFilter &&
       <div className={css.filterPaneButton}>
         <PaneMenu>

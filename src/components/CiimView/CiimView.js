@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { 
+import {
   Pane,
   PaneMenu,
   Paneset,
@@ -19,7 +19,7 @@ export default function CiimView() {
   const toggleFilterPane = () => {
     setShowFilter(!showFilter);
   };
-  
+
   return (
     <Paneset>
       {showFilter &&
@@ -37,13 +37,12 @@ export default function CiimView() {
       }
       <Pane
         defaultWidth="fill"
-        renderHeader={() =>
-          <Header
-            searchTerm={searchTerm}
-            setSearchTerm={setSearchTerm}
-            showFilter={showFilter}
-            toggleFilterPane={toggleFilterPane}
-          />
+        renderHeader={() => <Header
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+          showFilter={showFilter}
+          toggleFilterPane={toggleFilterPane}
+        />
         }
       >
         <p> This is where the CIIM app will go </p>

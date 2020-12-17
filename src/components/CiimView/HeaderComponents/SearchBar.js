@@ -1,5 +1,5 @@
 import React from 'react';
-import { 
+import {
   Button,
   SearchField
 } from '@folio/stripes/components';
@@ -8,7 +8,7 @@ import { FormattedMessage } from 'react-intl';
 
 import css from './Header.css';
 
-const SearchBar = ({onSearch, setSearchTerm, searchTerm}) => {
+const SearchBar = ({ onSearch, setSearchTerm, searchTerm }) => {
   return (
     <div className={css.searchContainer}>
       <SearchField
