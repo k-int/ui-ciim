@@ -5,6 +5,14 @@
   "settings.finish-editing": "Save",
   "settings.no-current-value": "No current value",
 
-  "settingName.settingLoading": "Loading"
+  "settingName.settingLoading": "Loading",
 
+  "ciimView.paneHeader.filter": "Filter",
+  "ciimView.paneHeader.searchBar.search": "Search",
+  "ciimView.paneHeader.searchBar.actions": "Actions",
+
+  "ciimFilters.filter.agreements": "Agreements",
+  "ciimFilters.filter.eResources": "E-resources",
+  "ciimFilters.filter.inventoryItems": "InventoryItems",
+  "ciimFilters.filter.purchaseOrders": "Purchase orders"
 }
