@@ -8,7 +8,7 @@ import {
   ExpandFilterPaneButton,
 } from '@folio/stripes/smart-components';
 
-import css from './Header.css';
+import css from '../Header.css';
 
 const ToggleFilterPaneButton = ({ showFilter, toggleFilterPane }) => {
   return (

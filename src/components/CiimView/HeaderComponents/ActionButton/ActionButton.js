@@ -7,7 +7,7 @@ import {
 
 import { FormattedMessage } from 'react-intl';
 
-import css from './Header.css';
+import css from '../Header.css';
 
 const ActionButton = () => {
   const [dropdownOpen, setDropDownOpen] = useState(false);

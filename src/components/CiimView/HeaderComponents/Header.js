@@ -3,7 +3,10 @@ import React from 'react';
 import {
   PaneHeader,
 } from '@folio/stripes/components';
-import { ActionButton, Divider, SearchBar, ToggleFilterPaneButton } from '.';
+import ActionButton from './ActionButton';
+import Divider from './Divider';
+import SearchBar from './SearchBar';
+import ToggleFilterPaneButton from './ToggleFilterPaneButton';
 
 import css from './Header.css';
 

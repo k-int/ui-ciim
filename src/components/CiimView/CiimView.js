@@ -10,7 +10,7 @@ import {
 } from '@folio/stripes/smart-components';
 import { FormattedMessage } from 'react-intl';
 
-import { Header } from './HeaderComponents';
+import Header from './HeaderComponents';
 
 export default function CiimView() {
   const [searchTerm, setSearchTerm] = useState('');
