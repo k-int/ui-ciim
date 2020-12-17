@@ -4,15 +4,15 @@ import { stripesConnect } from '@folio/stripes/core';
 import CiimView from '../components/CiimView';
 
 const CiimRoute = () => {
-  const [filters, setFilters] = useState({})
+  const [filters, setFilters] = useState({});
   const handleFilterChange = (incomingFilters) => {
-    setFilters(incomingFilters)
-  }
+    setFilters(incomingFilters);
+  };
 
-  console.log("Filters: %o", Object.keys(filters) !== 0 ? filters : "No filter set")
+  console.log('Filters: %o', Object.keys(filters) !== 0 ? filters : 'No filter set');
 
   return (
-    <CiimView onFilterChange={handleFilterChange}/>
+    <CiimView onFilterChange={handleFilterChange} />
   );
 };
 

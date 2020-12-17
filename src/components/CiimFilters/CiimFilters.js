@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 import {
   Button,
@@ -7,6 +8,15 @@ import {
 
 import { AppIcon } from '@folio/stripes/core';
 import { FormattedMessage } from 'react-intl';
+
+const sourcePropTypes = {
+  appIconProps: PropTypes.shape({
+    app: PropTypes.string.isRequired,
+    iconKey: PropTypes.string,
+    size: PropTypes.string
+  }),
+  name: PropTypes.string
+};
 
 export default function CiimFilters(props) {
   const [selectedFilters, setSelectedFilters] = useState({
@@ -17,19 +27,19 @@ export default function CiimFilters(props) {
   });
 
   const toggleFilter = (name) => {
-    const currentSetting = selectedFilters[name]
-    const newSelectedFilters = {...selectedFilters}
-    newSelectedFilters[name] = !currentSetting
-    setSelectedFilters(newSelectedFilters)
+    const currentSetting = selectedFilters[name];
+    const newSelectedFilters = { ...selectedFilters };
+    newSelectedFilters[name] = !currentSetting;
+    setSelectedFilters(newSelectedFilters);
     // Feed callback what the selected filters will be on next render
-    props.onFilterChange(newSelectedFilters)
-  }
+    props.onFilterChange(newSelectedFilters);
+  };
 
   const Source = ({ appIconProps, name }) => {
-    const selected = selectedFilters[name]
+    const selected = selectedFilters[name];
     const onClick = () => {
-      toggleFilter(name)
-    }
+      toggleFilter(name);
+    };
     return (
       <Row>
         <Button
@@ -38,32 +48,33 @@ export default function CiimFilters(props) {
         >
           <AppIcon {...appIconProps}>
             <FormattedMessage id={`ui-ciim.ciimFilters.filter.${name}`} />
-            {selected ? " (selected)" : " (not selected)"}
+            {selected ? ' (selected)' : ' (not selected)'}
           </AppIcon>
         </Button>
       </Row>
     );
-  }
+  };
+  Source.propTypes = sourcePropTypes;
 
   const sourceList = [
     <Source
-      appIconProps={{app: "agreements", size: "small"}}
       key="source_agreements"
+      appIconProps={{ app: 'agreements', size: 'small' }}
       name="agreements"
     />,
     <Source
-      appIconProps={{app: "agreements", iconKey:"eresource", size: "small"}}
       key="source_eResources"
+      appIconProps={{ app: 'agreements', iconKey:'eresource', size: 'small' }}
       name="eResources"
     />,
     <Source
-      appIconProps={{app: "inventory", iconKey:"instance", size: "small"}}
       key="source_inventoryItems"
+      appIconProps={{ app: 'inventory', iconKey:'instance', size: 'small' }}
       name="inventoryItems"
     />,
     <Source
-      appIconProps={{app: "orders", size: "small"}}
       key="source_purchaseOrders"
+      appIconProps={{ app: 'orders', size: 'small' }}
       name="purchaseOrders"
     />,
   ];

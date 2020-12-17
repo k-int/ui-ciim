@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+
 import {
   Pane,
   PaneMenu,
@@ -12,6 +14,10 @@ import { FormattedMessage } from 'react-intl';
 
 import Header from './HeaderComponents';
 import CiimFilters from '../CiimFilters';
+
+const propTypes = {
+  onFilterChange: PropTypes.func.isRequired
+};
 
 export default function CiimView(props) {
   const [searchTerm, setSearchTerm] = useState('');
@@ -33,7 +39,7 @@ export default function CiimView(props) {
           }
           paneTitle={<FormattedMessage id="ui-ciim.ciimView.paneHeader.filter" />}
         >
-          <CiimFilters onFilterChange={props.onFilterChange}/>
+          <CiimFilters onFilterChange={props.onFilterChange} />
         </Pane>
       }
       <Pane
@@ -51,3 +57,5 @@ export default function CiimView(props) {
     </Paneset>
   );
 }
+
+CiimView.propTypes = propTypes;
