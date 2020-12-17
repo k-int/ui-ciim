@@ -1,5 +1,15 @@
 import React, { useState } from 'react';
-import { Button, Pane, PaneHeader, PaneMenu, Paneset, SearchField } from '@folio/stripes/components';
+import { 
+  Button,
+  Dropdown,
+  DropdownButton,
+  DropdownMenu,
+  Pane,
+  PaneHeader,
+  PaneMenu,
+  Paneset,
+  SearchField
+} from '@folio/stripes/components';
 import Divider from '../Divider';
 
 import {
@@ -14,9 +24,14 @@ import css from './CiimView.css';
 export default function CiimView() {
   const [searchTerm, setSearchTerm] = useState('');
   const [showFilter, setShowFilter] = useState(true);
+  const [dropdownOpen, setDropDownOpen] = useState(false);
 
   const toggleFilterPane = () => {
     setShowFilter(!showFilter);
+  };
+
+  const toggleDropdown = () => {
+    setDropDownOpen(!dropdownOpen);
   };
 
   const SearchBar = () => (
@@ -53,6 +68,25 @@ export default function CiimView() {
       </div>
   );
 
+  const ActionButton = () => (
+    <div className={css.actionButtonContainer}>
+      <Dropdown
+        open={dropdownOpen}
+        onToggle={toggleDropdown}
+      >
+        <DropdownButton
+          data-role="toggle"
+          marginBottom0
+        >
+          <FormattedMessage id="ui-ciim.ciimView.paneHeader.searchBar.actions" />
+        </DropdownButton>
+        <DropdownMenu data-role="menu">
+          <span>This is our dropdown</span>
+        </DropdownMenu>
+      </Dropdown>
+    </div>
+  )
+
   const Header = () => (
     <PaneHeader
       header={
@@ -62,6 +96,7 @@ export default function CiimView() {
           <div className={css.divider}>
             <Divider />
           </div>
+          <ActionButton />
         </div>
       }
     />

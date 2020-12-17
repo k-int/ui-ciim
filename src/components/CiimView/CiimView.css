@@ -25,7 +25,10 @@
   flex-grow: 1;
   align-items: center;
   margin-left: var(--gutter-static-two-thirds);
-  padding-left: var(--gutter-static-two-thirds);
+}
+
+.actionButtonContainer {
+  margin-left: var(--gutter-static-two-thirds);
 }
 
 .paneHeaderContainer {
@@ -34,5 +37,4 @@
   justify-content: space-around;
   flex-grow: 1;
   align-items: center;
-  padding-left: var(--gutter-static-two-thirds);
 }
