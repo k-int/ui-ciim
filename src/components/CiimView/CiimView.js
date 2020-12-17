@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Pane, PaneHeader, PaneMenu, Paneset, SearchField } from '@folio/stripes/components';
+import Divider from '../Divider';
 
 import {
   CollapseFilterPaneButton,
@@ -29,14 +30,15 @@ export default function CiimView() {
         onClear={() => null}
         value={searchTerm}
       />
-      <Button
-        buttonStyle="primary"
-        className={css.searchButton}
-        marginBottom0
-        onClick={() => setSearchTerm('')}
-      >
-        Test
-      </Button>
+      <div className={css.searchButton}>
+        <Button
+          buttonStyle="primary"
+          marginBottom0
+          onClick={() => setSearchTerm('')}
+        >
+          Test
+        </Button>
+      </div>
     </div>
   );
 
@@ -57,6 +59,9 @@ export default function CiimView() {
         <div className={css.paneHeaderContainer}>
           <ToggleFilterPaneButton />
           <SearchBar />
+          <div className={css.divider}>
+            <Divider />
+          </div>
         </div>
       }
     />
