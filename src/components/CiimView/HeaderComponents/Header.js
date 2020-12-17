@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {
   PaneHeader,
@@ -9,6 +10,13 @@ import SearchBar from './SearchBar';
 import ToggleFilterPaneButton from './ToggleFilterPaneButton';
 
 import css from './Header.css';
+
+const propTypes = {
+  searchTerm: PropTypes.string,
+  setSearchTerm: PropTypes.func.isRequired,
+  showFilter: PropTypes.bool.isRequired,
+  toggleFilterPane: PropTypes.func.isRequired
+};
 
 const Header = ({
   searchTerm,
@@ -36,5 +44,7 @@ const Header = ({
     }
   />
 );
+
+Header.propTypes = propTypes;
 
 export default Header;

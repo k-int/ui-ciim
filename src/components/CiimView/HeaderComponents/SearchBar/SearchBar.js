@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import {
   Button,
   SearchField
@@ -7,6 +9,13 @@ import {
 import { FormattedMessage } from 'react-intl';
 
 import css from '../Header.css';
+
+
+const propTypes = {
+  onSearch: PropTypes.func.isRequired,
+  searchTerm: PropTypes.string,
+  setSearchTerm: PropTypes.func.isRequired,
+};
 
 const SearchBar = ({ onSearch, setSearchTerm, searchTerm }) => {
   return (
@@ -32,5 +41,7 @@ const SearchBar = ({ onSearch, setSearchTerm, searchTerm }) => {
     </div>
   );
 };
+
+SearchBar.propTypes = propTypes;
 
 export default SearchBar;
