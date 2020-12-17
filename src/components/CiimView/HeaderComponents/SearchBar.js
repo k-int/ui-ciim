@@ -6,7 +6,7 @@ import {
 
 import { FormattedMessage } from 'react-intl';
 
-import css from '../CiimView.css';
+import css from './Header.css';
 
 const SearchBar = ({onSearch, setSearchTerm, searchTerm}) => {
   return (
