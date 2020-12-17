@@ -12,7 +12,7 @@ const CiimRoute = () => {
   console.log("Filters: %o", Object.keys(filters) !== 0 ? filters : "No filter set")
 
   return (
-    <CiimView />
+    <CiimView onFilterChange={handleFilterChange}/>
   );
 };
 
