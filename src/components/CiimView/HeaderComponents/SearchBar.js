@@ -9,10 +9,6 @@ import { FormattedMessage } from 'react-intl';
 import css from '../CiimView.css';
 
 const SearchBar = ({onSearch, setSearchTerm, searchTerm}) => {
-  const doSearch = () => (
-    onSearch(),
-    setSearchTerm('')
-  );
   return (
     <div className={css.searchContainer}>
       <SearchField
@@ -28,7 +24,7 @@ const SearchBar = ({onSearch, setSearchTerm, searchTerm}) => {
         <Button
           buttonStyle="primary"
           marginBottom0
-          onClick={doSearch}
+          onClick={onSearch}
         >
           <FormattedMessage id="ui-ciim.ciimView.paneHeader.searchBar.search" />
         </Button>

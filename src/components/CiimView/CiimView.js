@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import { 
-  Button,
   Dropdown,
   DropdownMenu,
   Pane,
   PaneHeader,
   PaneMenu,
   Paneset,
-  SearchField
 } from '@folio/stripes/components';
 import Divider from '../Divider';
 
@@ -15,14 +13,10 @@ import {
   CollapseFilterPaneButton,
   ExpandFilterPaneButton,
 } from '@folio/stripes/smart-components';
-
 import { FormattedMessage } from 'react-intl';
 
 import SearchBar from './HeaderComponents';
-
 import css from './CiimView.css';
-
-
 
 export default function CiimView() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -72,7 +66,7 @@ export default function CiimView() {
         <div className={css.paneHeaderContainer}>
           <ToggleFilterPaneButton />
           <SearchBar
-            onSearch={() => console.log("Hello, you searched: %o", searchTerm)}
+            onSearch={() => null}
             setSearchTerm={setSearchTerm}
             searchterm={searchTerm}
           />
