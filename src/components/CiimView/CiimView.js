@@ -51,7 +51,7 @@ export default function CiimView() {
           marginBottom0
           onClick={() => setSearchTerm('')}
         >
-          Test
+          <FormattedMessage id="ui-ciim.ciimView.paneHeader.searchBar.search" />
         </Button>
       </div>
     </div>
