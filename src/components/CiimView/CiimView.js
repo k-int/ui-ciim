@@ -11,6 +11,7 @@ import {
 import { FormattedMessage } from 'react-intl';
 
 import Header from './HeaderComponents';
+import CiimFilters from '../CiimFilters';
 
 export default function CiimView() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -32,7 +33,7 @@ export default function CiimView() {
           }
           paneTitle={<FormattedMessage id="ui-ciim.ciimView.paneHeader.filter" />}
         >
-          <p> This is where the CIIM filters will go </p>
+          <CiimFilters />
         </Pane>
       }
       <Pane
