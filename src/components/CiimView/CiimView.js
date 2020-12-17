@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { 
   Button,
   Dropdown,
-  DropdownButton,
   DropdownMenu,
   Pane,
   PaneHeader,
@@ -19,7 +18,11 @@ import {
 
 import { FormattedMessage } from 'react-intl';
 
+import SearchBar from './HeaderComponents';
+
 import css from './CiimView.css';
+
+
 
 export default function CiimView() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -34,28 +37,6 @@ export default function CiimView() {
     setDropDownOpen(!dropdownOpen);
   };
 
-  const SearchBar = () => (
-    <div className={css.searchContainer}>
-      <SearchField
-        className={css.searchFieldContainer}
-        id="SearchField"
-        marginBottom0
-        onChange={e => setSearchTerm(e.target.value)}
-        // For some reason this is necessary for clear to work correctly
-        onClear={() => null}
-        value={searchTerm}
-      />
-      <div className={css.searchButton}>
-        <Button
-          buttonStyle="primary"
-          marginBottom0
-          onClick={() => setSearchTerm('')}
-        >
-          <FormattedMessage id="ui-ciim.ciimView.paneHeader.searchBar.search" />
-        </Button>
-      </div>
-    </div>
-  );
 
   const ToggleFilterPaneButton = () => (
     !showFilter &&
@@ -71,16 +52,14 @@ export default function CiimView() {
   const ActionButton = () => (
     <div className={css.actionButtonContainer}>
       <Dropdown
+        buttonProps={{
+          'marginBottom0': true,
+        }}
+        label={<FormattedMessage id="ui-ciim.ciimView.paneHeader.searchBar.actions" />}
         open={dropdownOpen}
         onToggle={toggleDropdown}
       >
-        <DropdownButton
-          data-role="toggle"
-          marginBottom0
-        >
-          <FormattedMessage id="ui-ciim.ciimView.paneHeader.searchBar.actions" />
-        </DropdownButton>
-        <DropdownMenu data-role="menu">
+        <DropdownMenu role="menu">
           <span>This is our dropdown</span>
         </DropdownMenu>
       </Dropdown>
@@ -92,7 +71,11 @@ export default function CiimView() {
       header={
         <div className={css.paneHeaderContainer}>
           <ToggleFilterPaneButton />
-          <SearchBar />
+          <SearchBar
+            onSearch={() => console.log("Hello, you searched: %o", searchTerm)}
+            setSearchTerm={setSearchTerm}
+            searchterm={searchTerm}
+          />
           <div className={css.divider}>
             <Divider />
           </div>
