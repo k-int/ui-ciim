@@ -11,16 +11,16 @@ const CiimRoute = () => {
 
   const filterValues = {
     resourceType: [
-      "agreements",
-      "agreementLines",
-      "eResources",
-      "orders",
-      "orderLines",
-      "inventoryInstances",
-      "inventoryHoldings",
-      "inventoryItems"
+      'agreements',
+      'agreementLines',
+      'eResources',
+      'orders',
+      'orderLines',
+      'inventoryInstances',
+      'inventoryHoldings',
+      'inventoryItems'
     ]
-  }
+  };
 
   console.log('Filters: %o', Object.keys(filters) !== 0 ? filters : 'No filter set');
 
@@ -28,7 +28,7 @@ const CiimRoute = () => {
     <CiimView
       filterData={{
         currentFilters: filters,
-        filterValues: filterValues,
+        filterValues,
         onFilterChange: handleFilterChange
       }}
     />

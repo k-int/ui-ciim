@@ -16,7 +16,11 @@ import Header from './HeaderComponents';
 import CiimFilters from '../CiimFilters';
 
 const propTypes = {
-  onFilterChange: PropTypes.func.isRequired
+  filterData: PropTypes.shape({
+    currentFilters: PropTypes.object.isRequired,
+    filterValues: PropTypes.object.isRequired,
+    onFilterChange: PropTypes.func.isRequired,
+  })
 };
 
 export default function CiimView(props) {
