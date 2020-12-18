@@ -9,10 +9,29 @@ const CiimRoute = () => {
     setFilters(incomingFilters);
   };
 
+  const filterValues = {
+    resourceType: [
+      'agreements',
+      'agreementLines',
+      'eResources',
+      'orders',
+      'orderLines',
+      'inventoryInstances',
+      'inventoryHoldings',
+      'inventoryItems'
+    ]
+  };
+
   console.log('Filters: %o', Object.keys(filters) !== 0 ? filters : 'No filter set');
 
   return (
-    <CiimView onFilterChange={handleFilterChange} />
+    <CiimView
+      filterData={{
+        currentFilters: filters,
+        filterValues,
+        onFilterChange: handleFilterChange
+      }}
+    />
   );
 };
 

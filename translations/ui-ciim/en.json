@@ -11,8 +11,23 @@
   "ciimView.paneHeader.searchBar.search": "Search",
   "ciimView.paneHeader.searchBar.actions": "Actions",
 
-  "ciimFilters.filter.agreements": "Agreements",
-  "ciimFilters.filter.eResources": "E-resources",
-  "ciimFilters.filter.inventoryItems": "InventoryItems",
-  "ciimFilters.filter.purchaseOrders": "Purchase orders"
+
+  "ciimFilters.filter.section.resourceType": "Resource type",
+  "ciimFilters.filter.resourceType.agreements": "Agreements",
+  "ciimFilters.filter.resourceType.agreementLines": "Agreement lines",
+  "ciimFilters.filter.resourceType.eResources": "E-resources",
+  "ciimFilters.filter.resourceType.orders": "Orders",
+  "ciimFilters.filter.resourceType.orderLines": "Order lines",
+  "ciimFilters.filter.resourceType.inventoryInstances": "Inventory instances",
+  "ciimFilters.filter.resourceType.inventoryHoldings": "Inventory holdings",
+  "ciimFilters.filter.resourceType.inventoryItems": "Inventory items",
+
+  "ciimFilters.filter.section.pubType": "Publication type",
+
+  "ciimFilters.filter.section.medium": "Medium",
+
+  "ciimFilters.filter.section.media": "Media",
+
+  "ciimFilters.filter.section.tags": "Tags"
+  
 }
