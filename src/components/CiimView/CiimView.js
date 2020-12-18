@@ -39,7 +39,7 @@ export default function CiimView(props) {
           }
           paneTitle={<FormattedMessage id="ui-ciim.ciimView.paneHeader.filter" />}
         >
-          <CiimFilters onFilterChange={props.onFilterChange} />
+          <CiimFilters filterData={props.filterData} />
         </Pane>
       }
       <Pane
