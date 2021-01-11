@@ -30,7 +30,13 @@
     "stripesDeps": [
       "@folio/stripes-erm-components"
     ],
-    "icons": [],
+    "icons": [
+      {
+        "name": "app",
+        "alt": "FOLIO app for CIIM connectivity",
+        "title": "Ciim"
+      }
+    ],
     "permissionSets": [
       {
         "permissionName": "module.ciim.enabled",
