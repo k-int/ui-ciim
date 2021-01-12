@@ -5,7 +5,6 @@ import { FormattedMessage } from 'react-intl';
 import { Headline, Layout } from '@folio/stripes/components';
 
 export default function CiimFilters({ filterData }) {
-
   const filterValues = {
     resourceType: [
       'agreements',
@@ -42,8 +41,8 @@ export default function CiimFilters({ filterData }) {
 
     return (
       <Layout className="padding-bottom-gutter">
-        <Headline size="large" margin="none">
-            <FormattedMessage id={`ui-ciim.ciimFilters.section.${group}`} />
+        <Headline margin="none" size="large">
+          <FormattedMessage id={`ui-ciim.ciimFilters.section.${group}`} />
         </Headline>
         <CheckboxFilter
           dataOptions={dataOptions}
