@@ -12,7 +12,7 @@
   "ciimView.paneHeader.searchBar.actions": "Actions",
 
 
-  "ciimFilters.filter.section.resourceType": "Resource type",
+  "ciimFilters.section.resourceType": "Resource type",
   "ciimFilters.filter.resourceType.agreements": "Agreements",
   "ciimFilters.filter.resourceType.agreementLines": "Agreement lines",
   "ciimFilters.filter.resourceType.eResources": "E-resources",
@@ -22,12 +22,14 @@
   "ciimFilters.filter.resourceType.inventoryHoldings": "Inventory holdings",
   "ciimFilters.filter.resourceType.inventoryItems": "Inventory items",
 
-  "ciimFilters.filter.section.pubType": "Publication type",
+  "ciimFilters.section.publicationType": "Publication type",
+  "ciimFilters.filter.publicationType.monograph": "Monograph",
+  "ciimFilters.filter.publicationType.serial": "Serial",
 
-  "ciimFilters.filter.section.medium": "Medium",
+  "ciimFilters.section.medium": "Medium",
 
-  "ciimFilters.filter.section.media": "Media",
+  "ciimFilters.section.media": "Media",
 
-  "ciimFilters.filter.section.tags": "Tags"
+  "ciimFilters.section.tags": "Tags"
   
 }

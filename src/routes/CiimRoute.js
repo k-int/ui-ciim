@@ -33,24 +33,10 @@ const CiimRoute = ({ location, history }) => {
 
   const parsedQuery = locationQueryGetter({ location })?.query;
 
-  const filterValues = {
-    resourceType: [
-      'agreements',
-      'agreementLines',
-      'eResources',
-      'orders',
-      'orderLines',
-      'inventoryInstances',
-      'inventoryHoldings',
-      'inventoryItems'
-    ]
-  };
-
   return (
     <CiimView
       filterData={{
         currentFilters: parseFilters(),
-        filterValues,
         onFilterChange: handleFilterChange,
         onSearchChange: handleSearchTermChange,
         searchTerm: parsedQuery
