@@ -20,11 +20,13 @@ const propTypes = {
     currentFilters: PropTypes.object.isRequired,
     filterValues: PropTypes.object.isRequired,
     onFilterChange: PropTypes.func.isRequired,
+    onSearchChange: PropTypes.func.isRequired,
+    searchTerm: PropTypes.string,
   })
 };
 
-export default function CiimView(props) {
-  const [searchTerm, setSearchTerm] = useState('');
+export default function CiimView({ filterData }) {
+  const { searchTerm, onSearchChange } = filterData;
   const [showFilter, setShowFilter] = useState(true);
 
   const toggleFilterPane = () => {
@@ -43,14 +45,14 @@ export default function CiimView(props) {
           }
           paneTitle={<FormattedMessage id="ui-ciim.ciimView.paneHeader.filter" />}
         >
-          <CiimFilters filterData={props.filterData} />
+          <CiimFilters filterData={filterData} />
         </Pane>
       }
       <Pane
         defaultWidth="fill"
         renderHeader={() => <Header
           searchTerm={searchTerm}
-          setSearchTerm={setSearchTerm}
+          setSearchTerm={onSearchChange}
           showFilter={showFilter}
           toggleFilterPane={toggleFilterPane}
         />

@@ -33,7 +33,7 @@ const Header = ({
         />
         <SearchBar
           onSearch={() => null}
-          searchterm={searchTerm}
+          searchTerm={searchTerm}
           setSearchTerm={setSearchTerm}
         />
         <div className={css.divider}>
