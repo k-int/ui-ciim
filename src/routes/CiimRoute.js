@@ -15,17 +15,23 @@ const propTypes = {
   history: PropTypes.object
 };
 
-const CiimRoute = (props) => {
+const CiimRoute = ({ location, history }) => {
   const handleFilterChange = (incomingFilters) => {
     const filterString = buildFilterString(incomingFilters);
-    locationQuerySetter({ location: props.location, history: props.history, nsValues: { filters: filterString } });
+    locationQuerySetter({ location, history, nsValues: { filters: filterString } });
+  };
+
+  const handleSearchTermChange = (incomingSearchTerm) => {
+    locationQuerySetter({ location, history, nsValues: { query: incomingSearchTerm } });
   };
 
   const parseFilters = () => {
-    const query = locationQueryGetter({ location: props.location });
+    const query = locationQueryGetter({ location });
     const parsedFilters = filterStringToObject(query.filters);
     return parsedFilters;
   };
+
+  const parsedQuery = locationQueryGetter({ location })?.query;
 
   const filterValues = {
     resourceType: [
@@ -45,7 +51,9 @@ const CiimRoute = (props) => {
       filterData={{
         currentFilters: parseFilters(),
         filterValues,
-        onFilterChange: handleFilterChange
+        onFilterChange: handleFilterChange,
+        onSearchChange: handleSearchTermChange,
+        searchTerm: parsedQuery
       }}
     />
   );
