@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { CheckboxFilter } from '@folio/stripes-smart-components';
 import { FormattedMessage } from 'react-intl';
@@ -61,3 +62,12 @@ export default function CiimFilters({ filterData }) {
     </>
   );
 }
+
+const propTypes = {
+  filterData: PropTypes.shape({
+    currentFilters: PropTypes.object.isRequired,
+    onFilterChange: PropTypes.func.isRequired,
+  })
+};
+
+CiimFilters.propTypes = propTypes;

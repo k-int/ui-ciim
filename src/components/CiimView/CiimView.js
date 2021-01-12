@@ -18,7 +18,6 @@ import CiimFilters from '../CiimFilters';
 const propTypes = {
   filterData: PropTypes.shape({
     currentFilters: PropTypes.object.isRequired,
-    filterValues: PropTypes.object.isRequired,
     onFilterChange: PropTypes.func.isRequired,
     onSearchChange: PropTypes.func.isRequired,
     searchTerm: PropTypes.string,
