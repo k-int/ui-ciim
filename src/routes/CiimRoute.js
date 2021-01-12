@@ -1,37 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import { stripesConnect } from '@folio/stripes/core';
-import {
-  buildFilterString,
-  locationQuerySetter,
-  locationQueryGetter,
-  filterStringToObject
-} from '../util/filterUtils';
 
 import CiimView from '../components/CiimView';
 
-const propTypes = {
-  location: PropTypes.object,
-  history: PropTypes.object
-};
-
-const CiimRoute = ({ location, history }) => {
+const CiimRoute = () => {
+  const [filters, setFilters] = useState({});
   const handleFilterChange = (incomingFilters) => {
-    const filterString = buildFilterString(incomingFilters);
-    locationQuerySetter({ location, history, nsValues: { filters: filterString } });
+    setFilters(incomingFilters);
   };
-
-  const handleSearchTermChange = (incomingSearchTerm) => {
-    locationQuerySetter({ location, history, nsValues: { query: incomingSearchTerm } });
-  };
-
-  const parseFilters = () => {
-    const query = locationQueryGetter({ location });
-    const parsedFilters = filterStringToObject(query.filters);
-    return parsedFilters;
-  };
-
-  const parsedQuery = locationQueryGetter({ location })?.query;
 
   const filterValues = {
     resourceType: [
@@ -46,19 +22,17 @@ const CiimRoute = ({ location, history }) => {
     ]
   };
 
+  console.log('Filters: %o', Object.keys(filters) !== 0 ? filters : 'No filter set');
+
   return (
     <CiimView
       filterData={{
-        currentFilters: parseFilters(),
+        currentFilters: filters,
         filterValues,
-        onFilterChange: handleFilterChange,
-        onSearchChange: handleSearchTermChange,
-        searchTerm: parsedQuery
+        onFilterChange: handleFilterChange
       }}
     />
   );
 };
-
-CiimRoute.propTypes = propTypes;
 
 export default stripesConnect(CiimRoute);
