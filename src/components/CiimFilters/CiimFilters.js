@@ -2,7 +2,7 @@ import React from 'react';
 
 import { CheckboxFilter } from '@folio/stripes-smart-components';
 import { FormattedMessage } from 'react-intl';
-import { Headline } from '@folio/stripes/components';
+import { Headline, Layout } from '@folio/stripes/components';
 
 export default function CiimFilters({ filterData }) {
 
@@ -41,7 +41,7 @@ export default function CiimFilters({ filterData }) {
     );
 
     return (
-      <>
+      <Layout className="padding-bottom-gutter">
         <Headline size="large" margin="none">
             <FormattedMessage id={`ui-ciim.ciimFilters.section.${group}`} />
         </Headline>
@@ -51,7 +51,7 @@ export default function CiimFilters({ filterData }) {
           onChange={(grp) => onFilterGroupChange(grp.name, grp.values)}
           selectedValues={filterData.currentFilters[group]}
         />
-      </>
+      </Layout>
     );
   };
 
