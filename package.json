@@ -1,5 +1,5 @@
 {
-  "name": "@folio/ciim",
+  "name": "@knowledge-integration/ciim",
   "version": "1.0.0",
   "description": "FOLIO app for CIIM connectivity",
   "main": "src/index.js",
