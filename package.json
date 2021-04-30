@@ -86,7 +86,7 @@
     "react-final-form-arrays": "^3.1.1"
   },
   "peerDependencies": {
-    "@folio/stripes": "^6.0.0",
+    "@folio/stripes": ">6.0.0",
     "moment": "^2.22.2",
     "react": "*",
     "react-dom": "*",
